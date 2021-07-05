@@ -5,7 +5,7 @@
 # @Time     : 2021/07/03
 # @Github   : https://github.com/Cr4y0nXX
 
-from createKey import createKey, sushu as smallSushu
+from createKey import createKey, genPrimeNumber
 from keyAgreement import GKA
 from block import Block
 import random
@@ -98,7 +98,7 @@ if __name__ == "__main__":
             exit(0)
         else:
             pubKey_n, pubKey_e, priKey = createKey()
-        primeNumber = smallSushu(1, 5)
+        primeNumber = genPrimeNumber(1, 5)
         pubKeyList, blockList = addBlock(pubKeyList, blockList, number, pubKey_n, pubKey_e, priKey, primeNumber)  # 添加区块
         primeNumberList.append(primeNumber)
         number += 1
