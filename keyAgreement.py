@@ -5,31 +5,13 @@
 # @Time     : 2021/07/03
 # @Github   : https://github.com/Cr4y0nXX
 
-from createKey import sushu
-
-#快速指数算法的模冥运算
-#a**b%c
-def moming(a1,b1,c1):
-    b=1
-    while b1>0:
-        a=b1%2
-        if a==1:
-            b=a1*b%c1
-        a1=a1*a1%c1
-        b1=int(b1/2)
-    return b
-
-# 生成本元根
-def yuangeng(a):
-    for i in range(2, 10):
-        if moming(i, a - 1, a) == 1:
-            return i
+from algorithm import genPrimeNumber, genPrimitiveRoot
 
 # 密钥协商协议
 # key=GKA(n,g)
 def GKA(a):
-    primeTmp = sushu(1, 10)
-    g = yuangeng(primeTmp)
+    primeTmp = genPrimeNumber(1, 10)
+    g = genPrimitiveRoot(primeTmp)
     x = a
     print("\n各个成员依次选取的协商整数：", x, "\n")
     v = 1
